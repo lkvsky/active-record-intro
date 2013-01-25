@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
   end
 
   def visit_url(url)
-    Visit.create(:user_id => self.id, :url_id => url.id)
+    Visit.create(:user_id => self.id, :url_id => url.id)  #Vincent - you could try this syntax as well:
+                                                          # create(user_id: self.id, url_id: url.id)
   end
 
   def leave_comment(url)
@@ -31,7 +32,7 @@ class User < ActiveRecord::Base
     gets.chomp
   end
 
-  def store_user
+  def store_user                  #Vincent - where does the new User object get created?
     self.name = get_user_name
     self.email = get_user_email
     self.save!
