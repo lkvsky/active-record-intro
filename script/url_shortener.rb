@@ -15,3 +15,5 @@ puts "Do you want to comment on this awesome link?"
 if gets.chomp == "y"
   user.leave_comment(url_obj)
 end
+
+

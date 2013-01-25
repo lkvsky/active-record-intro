@@ -8,6 +8,10 @@ class Url < ActiveRecord::Base
     p
   end
 
+  def self.possible_tags
+    []
+  end
+
   def store_url(user)
     self.long = get_long
     self.tag = get_tag
