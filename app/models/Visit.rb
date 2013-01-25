@@ -13,9 +13,9 @@ class Visit < ActiveRecord::Base
     Visit.where(:url_id => url_id).count
   end
 
-  def self.recently_visited
-    visits = Visit.find_by_sql("SELECT * FROM urls
-    JOIN visits ON urls.id = visits.url_id
+  def self.recently_visited                         #Vincent - this method can be much simpler than this...
+    visits = Visit.find_by_sql("SELECT * FROM urls  # Take a look at this:
+    JOIN visits ON urls.id = visits.url_id          # self.visits.where(:created_at => (mins.minutes.ago..Time.now)).length
     ORDER BY visits.created_at DESC LIMIT 2")
 
     visits.each { |v| p v.long }
