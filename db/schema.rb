@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20130124184847) do
 
   create_table "comments", :force => true do |t|
     t.string   "user_id"
-    t.string   "link_id"
+    t.string   "url_id"
     t.text     "comment"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(:version => 20130124184847) do
 
   create_table "visits", :force => true do |t|
     t.string   "user_id"
-    t.string   "link_id"
+    t.string   "url_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

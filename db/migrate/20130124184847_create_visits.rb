@@ -2,7 +2,7 @@ class CreateVisits < ActiveRecord::Migration
   def up
     create_table :visits do |v|
       v.string :user_id
-      v.string :link_id
+      v.string :url_id
 
       v.timestamps
     end
